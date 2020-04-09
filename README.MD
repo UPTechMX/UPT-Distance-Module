@@ -75,9 +75,9 @@ To proceed with the installation
 
 ### Create the database structure for the tool
 
-1. execute the command `python manage.py makemigrations plup`
-2. execute the command `python manage.py migrate plup`
-3. start the application with the command `python manage.py runserver 90`
+1. Execute the command `python manage.py makemigrations plup`
+2. Execute the command `python manage.py migrate plup`
+3. Start the application with the command `python manage.py runserver 90`
 
 After following the previous steps, the application should be accesible through port 90. If the server has a firewall, set up the firewall to allow incomming connections to port 90.
 
