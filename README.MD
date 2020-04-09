@@ -33,7 +33,7 @@ All the previous steps can only be done by using the user interface provided by 
 ## Installation
 
 This tool has been tested only on Ubuntu Server 18.04
-To proceed with the installation, 
+To proceed with the installation
 
 ### Create PostGIS database
 
@@ -44,12 +44,12 @@ To proceed with the installation,
 1. connect to the database with `\c upt;`
 1. create the PostGIS extencion in the database `create extension postgis`
 
-### Tool installation
+### Install the Tool
 
-1. first it is necesary to install the virtualenv package in the server where that will host the applicaton, so execute the following command `sudo apt-get install virtualenv`
-1. next, create a Python 3 virtual environment by executing the following command `virtualenv -p python3 ~/python3`, this will create the directory `python3` in the user home directory
+1. first it is necesary to install the virtualenv package in the server that will host the applicaton, so execute the following command `sudo apt-get install virtualenv`
+1. next, create a Python 3 virtual environment by executing the following command `virtualenv -p python3 ~/python3`, this will create the directory `python3` in the user's home directory
 1. after the creation of the virutal environment have finished, the virtual environment must be enabled, this can be done by excecuting `source ~/python3/bin/activate`
-1. once the virtual environmente have been enabled, the followin python packages have to be installed. use the command `pip install NAME_OF_THE_PACKAGE`
+1. once the virtual environmente have been enabled, the following python packages have to be installed. use the command `pip install NAME_OF_THE_PACKAGE`
 
     - numpy
     - shutil
@@ -66,19 +66,27 @@ To proceed with the installation,
     - django-filters
     - django-celery-results
 
-1. now it is time to clone this project repository into the server, move to the users home and  execute `git clone https://github.com/UPTechMX/UPT-Distance-Module`, this will create a directory named `UPT-Distance-Module` in the users home.
-1. move inside to the newly created directory with `cd ~/UPT-Distance-Module`
-1. Inside the directory ST, create a `.env` file, use the `.env.example` as a template
+1. now it is time to clone this project repository into the server, move to the user's home and  execute `git clone https://github.com/UPTechMX/UPT-Distance-Module`, this will create a directory named `UPT-Distance-Module` in the users home.
+1. move to the newly created directory with `cd ~/UPT-Distance-Module`
+1. inside the directory ST, create a `.env` file, use the `.env.example` as a template
 1. set the appropiate credentials in the `.env` file
 1. don't forget to also set a secure `SECRET_KEY` in the same file
 
-### create the database structur for the tool
+### create the database structure for the tool
 
 1. execute the command ` python manage.py makemigrations plup `
 2. execute the command ` python manage.py migrate plup `
 3. start the application with the command `python manage.py start runserver 90`
 
 After following the previous steps, the application should be accesible over the port 90. If the server has a firewall, set up the firewall to allow incomming connections to port 90
+
+#### Aditional settings
+
+Edit the dictionary `PARALLEL` instantiated in the file `~/UPT-Distance-Module/ST/settings` to set the values that best fits the server resources, use the attribute `MAX_THREADS` to set the maximun cores available in the server.
+
+Since the tool does not use any login mechanism, to avoid undesired access to the tool use the variable `ALLOWED_HOSTS` to allow only the UPT Server Extension to access the application. The variable is available in the file `~/UPT-Distance-Module/ST/settings`
+
+Also it is possible to install the application and the databse in different servers, for that it is necessary to set appropriately the database connections.
 
 ## References
 
