@@ -1,0 +1,28 @@
+{
+    "module": "AmenitiesDistance",
+    "name": "Amenities Distance",
+    "version": 0.1,
+    "date": "04-09-2019",
+    "developer": "CAPSUS",
+    "contact": "sistemas@capsus.mx",
+    "description": "This module performs the calculation or updating of the following values: mmu closest amenities distance",
+    "category": "",
+    "dependencies": ["GeneralCalculus"],
+    "data_dependencies": [
+        {
+            "tables": [
+                "mmu",
+                "mmu_info"
+            ],
+            "data": [
+                "minimal mapping unit location",
+                "minimal mapping unit population",
+                "amenities location"
+            ]
+        }
+    ],
+    "data_generated": [
+        "mmu_info(amenities fclass)"
+    ],
+    "submodules": []
+}

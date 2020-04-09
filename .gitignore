@@ -1,0 +1,6 @@
+**/__ pycache __/
+**/migrations/
+**.pyc
+*.zip
+.env
+.vscode/settings.json
