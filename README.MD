@@ -66,7 +66,7 @@ To proceed with the installation
     - django-filters
     - django-celery-results
 
-1. now it is time to clone this project repository into the server, move to the user's home and  execute `git clone https://github.com/UPTechMX/UPT-Distance-Module`, this will create a directory named `UPT-Distance-Module` in the users home.
+1. now it is time to clone this project repository into the server, move to the user's home directory and  execute `git clone https://github.com/UPTechMX/UPT-Distance-Module`, this will create a directory named `UPT-Distance-Module` in the user's home.
 1. move to the newly created directory with `cd ~/UPT-Distance-Module`
 1. inside the directory ST, create a `.env` file, use the `.env.example` as a template
 1. set the appropiate credentials in the `.env` file
@@ -76,7 +76,7 @@ To proceed with the installation
 
 1. execute the command ` python manage.py makemigrations plup `
 2. execute the command ` python manage.py migrate plup `
-3. start the application with the command `python manage.py start runserver 90`
+3. start the application with the command `python manage.py runserver 90`
 
 After following the previous steps, the application should be accesible over the port 90. If the server has a firewall, set up the firewall to allow incomming connections to port 90
 
