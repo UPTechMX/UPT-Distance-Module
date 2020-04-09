@@ -24,9 +24,9 @@ This tool does not provide an user interface, so all comunication with the tool 
 The general operation of the tools is as follows:
 
 1. A study area must be created
-1. Then Minimum Mapping Units have to be attached to the study area; this data will be used as the source layer
-1. All the target features have to be attached to the study area
-1. Finally the tool will evaluate the shortest euclidean distance among the Minimum Mapping Units and the target features
+2. Then Minimum Mapping Units have to be attached to the study area; this data will be used as the source layer
+3. All the target features have to be attached to the study area
+4. Finally the tool will evaluate the shortest euclidean distance among the Minimum Mapping Units and the target features
 
 All the previous steps can only be done by using the user interface provided by the UPT Server Extension.
 
@@ -39,11 +39,11 @@ To proceed with the installation
 ### Create PostGIS database
 
 1. Install the database server with the following command  `sudo apt install postgresql-10 postgresql-10-postgis-3`
-1. Connect to to your database server with the following command  `sudo su postgres && psql`
-1. Create a data base with the following command `create database upt;`
-1. Create a user with the following command  `create user upt with password '1234567890' SUPERUSER CREATEDB LOGIN;`; the username and pasword can be adjusted as needed.
-1. Connect to the database with the following command  `\c upt;`
-1. Create the PostGIS extension in the database with the following command  `create extension postgis`
+2. Connect to to your database server with the following command  `sudo su postgres && psql`
+3. Create a data base with the following command `create database upt;`
+4. Create a user with the following command  `create user upt with password '1234567890' SUPERUSER CREATEDB LOGIN;`; the username and pasword can be adjusted as needed.
+5. Connect to the database with the following command  `\c upt;`
+6. Create the PostGIS extension in the database with the following command  `create extension postgis`
 
 ### Install the Tool
 
