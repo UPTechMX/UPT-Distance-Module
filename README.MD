@@ -53,8 +53,6 @@ To proceed with the installation
 4. Once the virtual environment has been enabled, the following python packages need to be installed. Use the command `pip install NAME_OF_THE_PACKAGE`
 
     - numpy
-    - shutil
-    - zipfile
     - psycopg2_binary
     - architect
     - sqlalchemy
@@ -78,6 +76,7 @@ To proceed with the installation
 1. Execute the command `python manage.py makemigrations plst`
 2. Execute the command `python manage.py migrate plst`
 3. Start the application with the command `python manage.py runserver 90`
+4. Finally execute the command `celery -A ST worker --loglevel=error` to start the Celery worker
 
 After following the previous steps, the application should be accesible through port 90. If the server has a firewall, set up the firewall to allow incomming connections to port 90.
 
@@ -91,7 +90,16 @@ It's possible to install the application and the database in different servers. 
 
 ## References
 
---
+For detailed infomation about Djagno please visit [https://www.djangoproject.com/](https://www.djangoproject.com/)
+
+For detailed infomation about Celery please visit [http://www.celeryproject.org/](http://www.celeryproject.org/)
+
+For detailed infomation about how to use Celery with Django please visit [http://docs.celeryproject.org/en/latest/django/index.html](http://docs.celeryproject.org/en/latest/django/index.html)
+
+## License
+
+- SPDX-License-Identifier: MIT
+- Copyright (c) 2020 CAPSUS S.C.
 
 ## Author Info
 
