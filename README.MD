@@ -53,8 +53,6 @@ To proceed with the installation
 4. Once the virtual environment has been enabled, the following python packages need to be installed. Use the command `pip install NAME_OF_THE_PACKAGE`
 
     - numpy
-    - shutil
-    - zipfile
     - psycopg2_binary
     - architect
     - sqlalchemy
@@ -77,7 +75,11 @@ To proceed with the installation
 
 1. Execute the command `python manage.py makemigrations plst`
 2. Execute the command `python manage.py migrate plst`
-3. Start the application with the command `python manage.py runserver 90`
+
+### Start the application
+
+1. Start the application with the command `python manage.py runserver 90`
+2. Finally execute the command `celery -A ST worker --loglevel=error` to start the Celery worker
 
 After following the previous steps, the application should be accesible through port 90. If the server has a firewall, set up the firewall to allow incomming connections to port 90.
 
@@ -85,13 +87,24 @@ After following the previous steps, the application should be accesible through 
 
 Edit the dictionary `PARALLEL` instantiated in the file `~/UPT-Distance-Module/ST/settings` to set the values that best fits the server resources, use the attribute `MAX_THREADS` to set the maximun cores available in the server.
 
-Since the tool does not use any login mechanism, to prevent undesired access to the tool use the variable `ALLOWED_HOSTS` to only allow the UPT Server Extension to access the application. The variable is available in the file `~/UPT-Distance-Module/ST/settings`
+Since the tool does not use any login mechanism, to prevent undesired access to the tool use the variable `ALLOWED_HOSTS` to only allow the UPT Server Extension to access the application. The variable is available in the file `~/UPT-Distance-Module/ST/settings`.
+
+By default all logs are stored under the directory `/tmp/` of the server, to change the logs location edit the file `~/UPT-Distance-Module/plst/logging_config.py` and set the appropiate value `'filename': '/tmp/debug-st.log'`.
 
 It's possible to install the application and the database in different servers. To achieve this, it's necessary to appropriately set up the database connections.
 
 ## References
 
---
+For detailed infomation about Djagno please visit [https://www.djangoproject.com/](https://www.djangoproject.com/)
+
+For detailed infomation about Celery please visit [http://www.celeryproject.org/](http://www.celeryproject.org/)
+
+For detailed infomation about how to use Celery with Django please visit [http://docs.celeryproject.org/en/latest/django/index.html](http://docs.celeryproject.org/en/latest/django/index.html)
+
+## License
+
+- SPDX-License-Identifier: MIT
+- Copyright (c) 2020 CAPSUS S.C.
 
 ## Author Info
 
