@@ -22,7 +22,7 @@ BEGIN
 			SELECT 
 				mmu.mmu_id, 
 				amenities.fclass,
-				MIN(st_distance (mmu.location::geography, amenities.location::geography)) AS distance
+				MIN(st_distance (st_pointonsurface(mmu.location)::geography, amenities.location::geography)) AS distance
 			FROM mmu, amenities
 			where 
 				mmu.study_area = amenities.study_area
