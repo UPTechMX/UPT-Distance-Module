@@ -74,7 +74,6 @@ To proceed with the installation
 
 1. Execute the command `python manage.py makemigrations plst`
 2. Execute the command `python manage.py migrate plst`
-3. Execute the sql file (`UPT-Distance-Module/plst/indicators/AmetitiesDistance/st_indicator_mmu_amenities_distance.sql`) in the database to create the stored procedure that evaluates the distances.
 
 ### Start the application
 
