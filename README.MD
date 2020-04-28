@@ -54,7 +54,6 @@ To proceed with the installation
 
     - numpy
     - psycopg2_binary
-    - architect
     - sqlalchemy
     - redis
     - Celery
