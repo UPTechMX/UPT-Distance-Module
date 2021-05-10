@@ -56,7 +56,7 @@ class Mmu(models.Model):
 
 class mmu_info(models.Model):
     mmu = models.ForeignKey(Mmu, on_delete=models.CASCADE)
-    name = models.CharField(max_length=45, null=False)
+    name = models.CharField(max_length=200, null=False)
     value = models.FloatField(null=False)
 
     class Meta:
